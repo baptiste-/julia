@@ -797,7 +797,7 @@ sparse(D::Dense)    = sparse(Sparse(D))
 # Calculate the offset into the stype field of the cholmod_sparse_struct and
 # change the value
 function change_stype!(A::Sparse, i::Integer)
-    offset = fieldoffsets(C_Sparse)[names(C_Sparse) .== :stype][1]
+    offset = fieldoffsets(C_Sparse)[9] # field offset of C_Sparse.stype
     unsafe_store!(convert(Ptr{Cint}, A.p), i, div(offset, 4) + 1)
     A
 end

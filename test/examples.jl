@@ -46,11 +46,6 @@ include(joinpath(dir, "queens.jl"))
     end
 end
 
-# At least make sure code loads
-include(joinpath(dir, "plife.jl"))
-
-include(joinpath(dir, "preduce.jl"))
-
 include(joinpath(dir, "wordcount.jl"))
 
 # the 0mq clustermanager depends on package ZMQ. Just making sure the
